@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!-- for azure:  all these links must use https, not http -->
+   <title>My First jQuery Mobile Application</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/themes/customthemeroller.css" />
+   <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css" />
+   
+   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   
+   <script src="javascripts/main.js"></script>
+</head>
+
+<body>
+   <!------------------------------------------------------------>
+   <!-------------------------- Page 1 -------------------------->
+   <!------------------------------------------------------------>
+   <div data-role="page" id="Home">
+
+      <div data-role="header" data-theme='b'>
+         <h1>Personal Spending Tracker</h1>
+         <!-- navbar -->
+         <div data-role="navbar">
+            <ul>
+               <li><a href="#Overview" data-icon="grid">Spending Overview</a> </li>
+               <li><a href="#AddRemove" data-icon="edit">Add/Remove Items</a> </li>
+               <li><a href="#Categories" data-icon="gear">Edit Spending Categories</a> </li>
+            </ul>
+         </div>
+         <!-- /navbar -->
+      </div>
+
+      <div data-role="content" data-theme='c'>
+         <h2>Welcome to your personal spending tracker!</h2>
+         <h3>How to use the site:</h3>
+         <p>
+            Select "Spending Overview" to see a list of all expenses can be found here as well.
+         </p>
+         <p>
+            Select "Add/Remove Items" to log expenses.
+            </br>Note: Spending categories must first be created before items can be logged.
+         </p>
+         <p>
+            Select "Editing Spending Categories" to create/add/remove categories for which you
+            spend money on.
+         </p>
+
+      </div>
+
+      <div data-role="footer" data-theme='b'>
+         <h1>Copywrite Travis 2020</h1>
+      </div>
+
+   </div>
+
+   <!------------------------------------------------------------>
+   <!-------------------------- Page 2 -------------------------->
+   <!------------------------------------------------------------>
+   <div data-role="page" id="Overview">
+
+      <div data-role="header" data-theme='b'>
+         <h1>Spending Overview</h1>
+         <!-- navbar -->
+         <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home</a> </li>
+               <li><a href="#AddRemove" data-icon="edit">Add/Remove Items</a> </li>
+               <li><a href="#Categories" data-icon="gear">Edit Spending Categories</a> </li>
+            </ul>
+         </div>
+         <!-- /navbar -->
+      </div>
+
+      <div data-role="content" data-theme='c'>
+         <h3>Spending Overview</h3>
+         <div>
+            <p>
+               This is your spending log:
+            </p>
+            <table id="table_id" class="display">
+               <thead>
+                  <tr>
+                     <th>Date</th>
+                     <th>Description</th>
+                     <th>Category</th>
+                     <th>Amount</th>
+                  </tr>
+               </thead>
+               <tbody id="addItemHere">
+               </tbody>
+            </table>
+         </div>
+      </div>
+
+      <div data-role="footer" data-theme='b'>
+         <h1>Copywrite Travis 2020</h1>
+      </div>
+
+   </div>
+
+   <!------------------------------------------------------------>
+   <!-------------------------- Page 3 -------------------------->
+   <!------------------------------------------------------------>
+   <div data-role="page" id="AddRemove">
+
+      <div data-role="header" data-theme='b'>
+         <h1>Add/Remove Items</h1>
+         <!-- navbar -->
+         <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home</a> </li>
+               <li><a href="#Overview" data-icon="grid">Spending Overview</a> </li>
+               <li><a href="#Categories" data-icon="gear">Edit Spending Categories</a> </li>
+            </ul>
+         </div>
+         <!-- /navbar -->
+      </div>
+
+      <div data-role="content" data-theme='d'>
+         <!-- Create list item: Date, Name/Description, Category, Amount -->
+         <h3>Add a new item</h3>
+         <div class="form-style-1">
+            <form id="form-2">
+               <label for="itemDate">Date:</label>
+               <input type="date" id="itemDate" name="itemDate" />
+   
+               <label for="itemDescription">Description:</label>
+               <input type="text" id="itemDescription" name="itemDescription" />
+
+               <label for="itemCategory">Category:</label>
+               <select id="itemCategory" name="itemCategory">
+               </select>
+
+               <label for="itemAmount">Amount:</label>
+               <input type="number" id="itemAmount" name="itemAmount" />
+
+               <input type="button" id="addItem" value="Add Item">
+            </form>
+         </div>
+         <h3>Delete an item</h3>
+         <div class="form-style-1">
+               <form id="form-4">
+                  <label for="removeItemDesc">Desciption:</label>
+                  <select id="removeItemDesc" name="removeItemDesc">
+                  </select>
+
+                  <input type="button" id="removeItem" value="Remove Item">
+               </form>
+            </div>
+      </div>
+
+      <div data-role="footer" data-theme='b'>
+         <h1>Copywrite Travis 2020</h1>
+      </div>
+
+   </div>
+
+   <!------------------------------------------------------------>
+   <!-------------------------- Page 4 -------------------------->
+   <!------------------------------------------------------------>
+   <div data-role="page" id="Categories">
+
+      <div data-role="header" data-theme='b'>
+         <h1>Edit Budget Categories</h1>
+         <!-- navbar -->
+         <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home</a> </li>
+               <li><a href="#Overview" data-icon="grid">Spending Overview</a> </li>
+               <li><a href="#AddRemove" data-icon="edit">Add/Remove Items</a> </li>
+            </ul>
+         </div>
+         <!-- /navbar -->
+      </div>
+
+      <div data-role="content" data-theme='d'>
+         <h3>Add a new category</h3>
+         <div class="form-style-1">
+            <form id="form-1">
+               <label for="budgetName">Category Name:</label>
+               <input type="text" id="budgetName" name="budgetName" />
+   
+               <label for="budgetTarget">Category Target:</label>
+               <input type="number" id="budgetTarget" name="budgetTarget" />
+
+               <input type="button" id="addCategory" value="Add Category">
+            </form>
+         </div>
+         <h3>Remove a category</h3>
+         <div id="displayArea">
+            <div class="form-style-1">
+               <form id="form-3">
+                  <label for="deleteCategory">Category Name:</label>
+                  <select id="deleteCategory" name="deleteCategory">
+                  </select>
+   
+                  <input type="button" id="removeCategory" value="Remove Category">
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <div data-role="footer" data-theme='b'>
+         <h1>Copywrite Travis 2020</h1>
+      </div>
+
+   </div>
+</body>
+</html>

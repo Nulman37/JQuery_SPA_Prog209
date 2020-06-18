@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/d728220d-49b0-47e5-a8b7-8d3e7486ab15/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/TravisJQuerySPA",
+    "appService.deploySubpath": "."
+}
